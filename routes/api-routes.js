@@ -35,9 +35,8 @@ router.post("/api/workouts", (req, res) => {
 });
 
 router.get("/api/workouts/range", (req, res) => {
-    Workout.find().then(results => {
+    Workout.find({}).then(results => {
         res.json(results);
-        console.log("Range")
     }).catch(err => {
         res.json(err)
     });
